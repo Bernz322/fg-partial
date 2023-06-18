@@ -1,10 +1,5 @@
-import {
-  SettingState,
-  SettingDefaultState,
-} from "./interface";
-
 // Initial Setting State
-export const initialState: SettingState = {
+export const initialState = {
   saveLocal: "sessionStorage",
   storeKey: "huisetting-react",
   setting: {
@@ -73,7 +68,7 @@ export const initialState: SettingState = {
 };
 
 // Default Setting State
-export const defaultState: SettingDefaultState = {
+export const defaultState = {
   saveLocal: "sessionStorage",
   storeKey: "huisetting",
   setting: {
