@@ -1,24 +1,24 @@
-import {memo,Fragment} from 'react'
-import {Row,Col,Image} from 'react-bootstrap'
-import Card from '../../../components/Card'
+import { memo, Fragment } from 'react';
+import { Row, Col, Image } from 'react-bootstrap';
+import Card from '../../../components/Card';
 
-//progressbar
-import Progress from '../../../components/progress.js'
+// progressbar
+import Progress from '../../../components/progress.js';
 
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom';
 // img
-import avatars11 from '../../../assets/images/avatars/01.png'
-import avatars22 from '../../../assets/images/avatars/avtar_1.png'
-import avatars33 from '../../../assets/images/avatars/avtar_2.png'
-import avatars44 from '../../../assets/images/avatars/avtar_3.png'
-import avatars55 from '../../../assets/images/avatars/avtar_4.png'
-import avatars66 from '../../../assets/images/avatars/avtar_5.png'
+import avatars11 from '../../../assets/images/avatars/01.png';
+import avatars22 from '../../../assets/images/avatars/avtar_1.png';
+import avatars33 from '../../../assets/images/avatars/avtar_2.png';
+import avatars44 from '../../../assets/images/avatars/avtar_3.png';
+import avatars55 from '../../../assets/images/avatars/avtar_4.png';
+import avatars66 from '../../../assets/images/avatars/avtar_5.png';
 
-//Count-up
+// Count-up
 import CountUp from 'react-countup';
 
 const Widgetbasic = memo(() => {
-    return (
+   return (
       <Fragment>
          <Row>
             <Col lg="3" md="6">
@@ -27,17 +27,17 @@ const Widgetbasic = memo(() => {
                      <div className="text-center">AVG Impressions</div>
                      <div className="d-flex align-items-center justify-content-between mt-3">
                         <div>
-                           <h2 className="counter"><CountUp  start={0.563} end={2.648} duration={3}  decimals={3}/></h2>
+                           <h2 className="counter"><CountUp start={0.563} end={2.648} duration={3} decimals={3} /></h2>
                            26.84%
                         </div>
                         <div className="border  bg-soft-danger rounded p-3">
-                           <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px"  fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                           <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
                            </svg>
                         </div>
                      </div>
                      <div className="mt-4">
-                        <Progress softcolors="danger" color="danger" className="shadow-none w-100" value={50} minvalue={0} maxvalue={100} style={{height: "6px"}} />
+                        <Progress softcolors="danger" color="danger" className="shadow-none w-100" value={50} minvalue={0} maxvalue={100} style={{ height: "6px" }} />
                      </div>
                   </Card.Body>
                </Card>
@@ -48,17 +48,17 @@ const Widgetbasic = memo(() => {
                      <div className="text-center">AVG Engagements Rate</div>
                      <div className="d-flex align-items-center justify-content-between mt-3">
                         <div>
-                           <h2 className="counter"><CountUp  start={0.563} end={2.648} duration={3}  decimals={3}/></h2>
+                           <h2 className="counter"><CountUp start={0.563} end={2.648} duration={3} decimals={3} /></h2>
                            26.84%
                         </div>
                         <div className="border bg-soft-info rounded p-3">
-                           <svg xmlns="http://www.w3.org/2000/svg"  width="20px" height="20px" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                           <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
                            </svg>
                         </div>
                      </div>
                      <div className="mt-4">
-                        <Progress softcolors="info" color="info" className="shadow-none w-100" value={70} minvalue={0} maxvalue={100} style={{height: "6px"}} />
+                        <Progress softcolors="info" color="info" className="shadow-none w-100" value={70} minvalue={0} maxvalue={100} style={{ height: "6px" }} />
                      </div>
                   </Card.Body>
                </Card>
@@ -69,17 +69,17 @@ const Widgetbasic = memo(() => {
                      <div className="text-center">AVG Reach</div>
                      <div className="d-flex align-items-center justify-content-between mt-3">
                         <div>
-                           <h2 className="counter"><CountUp  start={0.563} end={2.648} duration={3}  decimals={3}/></h2>
+                           <h2 className="counter"><CountUp start={0.563} end={2.648} duration={3} decimals={3} /></h2>
                            26.84%
                         </div>
                         <div className="border bg-soft-success rounded p-3">
-                           <svg xmlns="http://www.w3.org/2000/svg"  width="20px" height="20px" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                           <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
                            </svg>
                         </div>
                      </div>
                      <div className="mt-4">
-                        <Progress softcolors="success" color="success" className="shadow-none w-100" value={75} minvalue={0} maxvalue={100} style={{height: "6px"}} />
+                        <Progress softcolors="success" color="success" className="shadow-none w-100" value={75} minvalue={0} maxvalue={100} style={{ height: "6px" }} />
                      </div>
                   </Card.Body>
                </Card>
@@ -90,17 +90,17 @@ const Widgetbasic = memo(() => {
                      <div className="text-center">AVG Transport</div>
                      <div className="d-flex align-items-center justify-content-between mt-3">
                         <div>
-                           <h2 className="counter"><CountUp  start={0.563} end={2.648} duration={3}  decimals={3}/></h2>
+                           <h2 className="counter"><CountUp start={0.563} end={2.648} duration={3} decimals={3} /></h2>
                            26.84%
                         </div>
                         <div className="border  bg-soft-primary rounded p-3">
-                           <svg xmlns="http://www.w3.org/2000/svg"  width="20px" height="20px" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                           <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
                            </svg>
                         </div>
                      </div>
                      <div className="mt-4">
-                           <Progress softcolors="primary" color="primary" className="shadow-none w-100" value={60} minvalue={0} maxvalue={100} style={{height: "6px"}} />
+                        <Progress softcolors="primary" color="primary" className="shadow-none w-100" value={60} minvalue={0} maxvalue={100} style={{ height: "6px" }} />
                      </div>
                   </Card.Body>
                </Card>
@@ -110,12 +110,12 @@ const Widgetbasic = memo(() => {
                   <Card.Body>
                      <div className="d-flex justify-content-between align-items-center">
                         <div className="bg-soft-info rounded p-3">
-                           <svg xmlns="http://www.w3.org/2000/svg"  width="20px" height="20px" viewBox="0 0 20 20" fill="currentColor">
+                           <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" viewBox="0 0 20 20" fill="currentColor">
                               <path fillRule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clipRule="evenodd" />
                            </svg>
                         </div>
                         <div className="text-end">
-                           <h2 className="counter"><CountUp  start={565} end={5600} duration={3} /></h2>
+                           <h2 className="counter"><CountUp start={565} end={5600} duration={3} /></h2>
                            Doctors
                         </div>
                      </div>
@@ -132,7 +132,7 @@ const Widgetbasic = memo(() => {
                            </svg>
                         </div>
                         <div className="text-end">
-                           <h2 className="counter"><CountUp  start={513} end={5600} duration={3} /></h2>
+                           <h2 className="counter"><CountUp start={513} end={5600} duration={3} /></h2>
                            Nurses
                         </div>
                      </div>
@@ -149,7 +149,7 @@ const Widgetbasic = memo(() => {
                            </svg>
                         </div>
                         <div className="text-end">
-                           <h2 className="counter"><CountUp  start={584} end={3500} duration={3} /></h2>
+                           <h2 className="counter"><CountUp start={584} end={3500} duration={3} /></h2>
                            Patients
                         </div>
                      </div>
@@ -166,7 +166,7 @@ const Widgetbasic = memo(() => {
                            </svg>
                         </div>
                         <div className="text-end">
-                              <h2 className="counter"><CountUp  start={546} end={4500} duration={3}/></h2>
+                           <h2 className="counter"><CountUp start={546} end={4500} duration={3} /></h2>
                            Pharmacists
                         </div>
                      </div>
@@ -184,7 +184,7 @@ const Widgetbasic = memo(() => {
                         </div>
                         <div className="text-end">
                            Customers
-                              <h2 className="counter"><CountUp  start={15} end={75} duration={3} /></h2>
+                           <h2 className="counter"><CountUp start={15} end={75} duration={3} /></h2>
                         </div>
                      </div>
                   </Card.Body>
@@ -201,7 +201,7 @@ const Widgetbasic = memo(() => {
                         </div>
                         <div className="text-end">
                            Products
-                              <h2 className="counter"><CountUp  start={19} end={60} duration={3}/></h2>
+                           <h2 className="counter"><CountUp start={19} end={60} duration={3} /></h2>
                         </div>
                      </div>
                   </Card.Body>
@@ -218,7 +218,7 @@ const Widgetbasic = memo(() => {
                         </div>
                         <div className="text-end">
                            User
-                              <h2 className="counter"><CountUp  start={24} end={80} duration={3}/></h2>
+                           <h2 className="counter"><CountUp start={24} end={80} duration={3} /></h2>
                         </div>
                      </div>
                   </Card.Body>
@@ -235,7 +235,7 @@ const Widgetbasic = memo(() => {
                         </div>
                         <div className="text-end">
                            Category
-                              <h2 className="counter"><CountUp  start={8} end={45} duration={3} /></h2>
+                           <h2 className="counter"><CountUp start={8} end={45} duration={3} /></h2>
                         </div>
                      </div>
                   </Card.Body>
@@ -277,7 +277,7 @@ const Widgetbasic = memo(() => {
                            <span>Worked Issue</span>
                         </div>
                         <div>
-                           <span className="counter"><CountUp  start={275} end={1200} duration={3}/></span>
+                           <span className="counter"><CountUp start={275} end={1200} duration={3} /></span>
                         </div>
                      </div>
                   </Card.Body>
@@ -291,12 +291,12 @@ const Widgetbasic = memo(() => {
                            <span>Worked Income</span>
                         </div>
                         <div>
-                           <span className="counter">$<CountUp  start={10000} end={54000} duration={3}/></span>
+                           <span className="counter">$<CountUp start={10000} end={54000} duration={3} /></span>
                         </div>
                      </div>
                   </Card.Body>
                </Card>
-            </Col>      
+            </Col>
             <Col xl="4">
                <Card>
                   <Card.Body>
@@ -334,7 +334,7 @@ const Widgetbasic = memo(() => {
                            </svg>
                         </div>
                         <div>
-                           <h1 className="counter text-success"><CountUp  start={48} end={250} duration={3} />M</h1>
+                           <h1 className="counter text-success"><CountUp start={48} end={250} duration={3} />M</h1>
                            <p className="text-success mb-0">Total Earning</p>
                         </div>
                      </div>
@@ -344,7 +344,7 @@ const Widgetbasic = memo(() => {
             <Col xl="4" lg="6">
                <Card>
                   <Card.Body>
-                     <div className="d-flex align-items-center">                  
+                     <div className="d-flex align-items-center">
                         <div className=" bg-soft-info rounded p-3">
                            <svg xmlns="http://www.w3.org/2000/svg" width="40px" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
@@ -378,8 +378,8 @@ const Widgetbasic = memo(() => {
             <Col lg="4">
                <Card>
                   <Card.Body>
-                     <h2 className="counter">$<CountUp  start={495} end={3450} duration={3}/></h2>
-                     <p className="mb-2">Your Current Balance</p> 
+                     <h2 className="counter">$<CountUp start={495} end={3450} duration={3} /></h2>
+                     <p className="mb-2">Your Current Balance</p>
                      <h6>20% ($520)</h6>
                      <Link to="#" className="mt-4 btn btn-danger d-block rounded">Add credit</Link>
                      <div className="mt-3">
@@ -388,28 +388,28 @@ const Widgetbasic = memo(() => {
                               <p className="mb-0">Insurance</p>
                               <h4>18</h4>
                            </div>
-                           <Progress softcolors="info" color="info" className="shadow-none w-100" value={60} minvalue={0} maxvalue={100} style={{height: "10px"}} />
+                           <Progress softcolors="info" color="info" className="shadow-none w-100" value={60} minvalue={0} maxvalue={100} style={{ height: "10px" }} />
                         </div>
                         <div className="pb-3">
                            <div className="d-flex align-items-center justify-content-between mb-2">
                               <p className="mb-0">Savings</p>
                               <h4>124</h4>
                            </div>
-                           <Progress softcolors="success" color="success" className="shadow-none w-100" value={80} minvalue={0} maxvalue={100} style={{height: "10px"}} />
+                           <Progress softcolors="success" color="success" className="shadow-none w-100" value={80} minvalue={0} maxvalue={100} style={{ height: "10px" }} />
                         </div>
                         <div className="pb-3">
                            <div className="d-flex align-items-center justify-content-between mb-2">
                               <p className="mb-0">Investment</p>
                               <h4>74</h4>
                            </div>
-                           <Progress softcolors="primary" color="primary" className="shadow-none w-100" value={55} minvalue={0} maxvalue={100} style={{height: "10px"}} />
+                           <Progress softcolors="primary" color="primary" className="shadow-none w-100" value={55} minvalue={0} maxvalue={100} style={{ height: "10px" }} />
                         </div>
                         <div>
                            <div className="d-flex align-items-center justify-content-between mb-2">
                               <p className="mb-0">Progress</p>
                               <h4>89</h4>
                            </div>
-                           <Progress softcolors="success" color="success" className="shadow-none w-100" value={89} minvalue={0} maxvalue={100} style={{height: "10px"}} />
+                           <Progress softcolors="success" color="success" className="shadow-none w-100" value={89} minvalue={0} maxvalue={100} style={{ height: "10px" }} />
                         </div>
                      </div>
                   </Card.Body>
@@ -433,7 +433,7 @@ const Widgetbasic = memo(() => {
                               <div className="mt-3">
                                  <span>CUSTOMER</span>
                                  <div>
-                                    <h3 className="counter"><CountUp  start={21.497} end={60.586} duration={3} decimals={3} decimal="," /></h3>
+                                    <h3 className="counter"><CountUp start={21.497} end={60.586} duration={3} decimals={3} decimal="," /></h3>
                                  </div>
                               </div>
                               <div className="mt-3">
@@ -464,7 +464,7 @@ const Widgetbasic = memo(() => {
                               <div className="mt-3">
                                  <span>SALES</span>
                                  <div>
-                                    <h3 className="counter"><CountUp  start={20.487} end={80.586} duration={3} decimals={3} decimal="," /></h3>
+                                    <h3 className="counter"><CountUp start={20.487} end={80.586} duration={3} decimals={3} decimal="," /></h3>
                                  </div>
                               </div>
                               <div className="mt-3">
@@ -497,7 +497,7 @@ const Widgetbasic = memo(() => {
                               <div className="mt-3">
                                  <span>PROFIT</span>
                                  <div>
-                                    <h3 className="counter"><CountUp  start={11} end={80} duration={3} />%</h3>
+                                    <h3 className="counter"><CountUp start={11} end={80} duration={3} />%</h3>
                                  </div>
                               </div>
                               <div className="mt-3">
@@ -528,7 +528,7 @@ const Widgetbasic = memo(() => {
                               <div className="mt-3">
                                  <span>LOSS</span>
                                  <div>
-                                    <h3 className="counter"><CountUp  start={6} end={15} duration={3}/>%</h3>
+                                    <h3 className="counter"><CountUp start={6} end={15} duration={3} />%</h3>
                                  </div>
                               </div>
                               <div className="mt-3">
@@ -550,7 +550,7 @@ const Widgetbasic = memo(() => {
                   <Card.Body className="p-3">
                      <h5>Assets</h5>
                      <div className="text-center">
-                        <h1 className="counter">-<CountUp  start={42.456} end={108.56} duration={3} decimals={2}/>K</h1>
+                        <h1 className="counter">-<CountUp start={42.456} end={108.56} duration={3} decimals={2} />K</h1>
                         <p className="mb-0">Lorem ipsum dolor sit amet</p>
                      </div>
                   </Card.Body>
@@ -559,7 +559,7 @@ const Widgetbasic = memo(() => {
                   <Card.Body className="p-3">
                      <h5>Liabilities</h5>
                      <div className="text-center">
-                        <h1 className="counter">-<CountUp  start={152.46} end={425.20} duration={3} decimals={2}/>K</h1>
+                        <h1 className="counter">-<CountUp start={152.46} end={425.20} duration={3} decimals={2} />K</h1>
                         <p className="mb-0">Lorem ipsum dolor sit amet</p>
                      </div>
                   </Card.Body>
@@ -568,7 +568,7 @@ const Widgetbasic = memo(() => {
                   <Card.Body className="p-3">
                      <h5>Working Capital</h5>
                      <div className="text-center">
-                        <h1 className="counter">-<CountUp  start={102.46} end={380.40} duration={3} decimals={2}/>K</h1>
+                        <h1 className="counter">-<CountUp start={102.46} end={380.40} duration={3} decimals={2} />K</h1>
                         <p className="mb-0">Lorem ipsum dolor sit amet</p>
                      </div>
                   </Card.Body>
@@ -585,7 +585,7 @@ const Widgetbasic = memo(() => {
                               <div>
                                  <span><b>Revenue</b></span>
                                  <div className="mt-2">
-                                    <h2 className="counter">$<CountUp  start={12163} end={35000} duration={3} /></h2>
+                                    <h2 className="counter">$<CountUp start={12163} end={35000} duration={3} /></h2>
                                  </div>
                               </div>
                               <div>
@@ -601,7 +601,7 @@ const Widgetbasic = memo(() => {
                               </div>
                            </div>
                            <div className="mt-3">
-                              <Progress softcolors="primary" color="primary" className="shadow-none w-100" value={70} minvalue={0} maxvalue={100} style={{height: "6px"}} />
+                              <Progress softcolors="primary" color="primary" className="shadow-none w-100" value={70} minvalue={0} maxvalue={100} style={{ height: "6px" }} />
                            </div>
                         </Card.Body>
                      </Card>
@@ -613,7 +613,7 @@ const Widgetbasic = memo(() => {
                               <div>
                                  <span><b>Orders</b></span>
                                  <div className="mt-2">
-                                    <h2 className="counter"><CountUp  start={754} end={2500} duration={3}/></h2>
+                                    <h2 className="counter"><CountUp start={754} end={2500} duration={3} /></h2>
                                  </div>
                               </div>
                               <div>
@@ -629,7 +629,7 @@ const Widgetbasic = memo(() => {
                               </div>
                            </div>
                            <div className="mt-3">
-                              <Progress softcolors="warning" color="warning" className="shadow-none w-100" value={24} minvalue={0} maxvalue={100} style={{height: "6px"}} />
+                              <Progress softcolors="warning" color="warning" className="shadow-none w-100" value={24} minvalue={0} maxvalue={100} style={{ height: "6px" }} />
                            </div>
                         </Card.Body>
                      </Card>
@@ -643,7 +643,7 @@ const Widgetbasic = memo(() => {
                               <div>
                                  <span><b>Leads</b></span>
                                  <div className="mt-2">
-                                 <h2 className="counter">$<CountUp  start={12000} end={35000} duration={3}/></h2>
+                                    <h2 className="counter">$<CountUp start={12000} end={35000} duration={3} /></h2>
                                  </div>
                               </div>
                               <div>
@@ -659,7 +659,7 @@ const Widgetbasic = memo(() => {
                               </div>
                            </div>
                            <div className="mt-3">
-                              <Progress softcolors="danger" color="danger" className="shadow-none w-100" value={50} minvalue={0} maxvalue={100} style={{height: "6px"}} />
+                              <Progress softcolors="danger" color="danger" className="shadow-none w-100" value={50} minvalue={0} maxvalue={100} style={{ height: "6px" }} />
                            </div>
                         </Card.Body>
                      </Card>
@@ -671,7 +671,7 @@ const Widgetbasic = memo(() => {
                               <div>
                                  <span><b>Conversion</b></span>
                                  <div className="mt-2">
-                                    <h2 className="counter"><CountUp  start={4} end={35} duration={3}/>%</h2>
+                                    <h2 className="counter"><CountUp start={4} end={35} duration={3} />%</h2>
                                  </div>
                               </div>
                               <div>
@@ -687,7 +687,7 @@ const Widgetbasic = memo(() => {
                               </div>
                            </div>
                            <div className="mt-3">
-                              <Progress softcolors="info" color="info" className="shadow-none w-100" value={30} minvalue={0} maxvalue={100} style={{height: "6px"}} />
+                              <Progress softcolors="info" color="info" className="shadow-none w-100" value={30} minvalue={0} maxvalue={100} style={{ height: "6px" }} />
                            </div>
                         </Card.Body>
                      </Card>
@@ -698,12 +698,12 @@ const Widgetbasic = memo(() => {
                <Card>
                   <Card.Body>
                      <div className="border-bottom text-center pb-3">
-                        <Image className="theme-color-default-img  img-fluid avatar-80 mb-4" src={avatars11} alt="profile-pic"/>
-                        <Image className="theme-color-purple-img img-fluid avatar-80 mb-4" src={avatars22} alt="profile-pic"/>
-                        <Image className="theme-color-blue-img img-fluid avatar-80 mb-4" src={avatars33} alt="profile-pic"/>
-                        <Image className="theme-color-green-img img-fluid avatar-80 mb-4" src={avatars55} alt="profile-pic"/>
-                        <Image className="theme-color-yellow-img img-fluid avatar-80 mb-4" src={avatars66} alt="profile-pic"/>
-                        <Image className="theme-color-pink-img img-fluid avatar-80 mb-4" src={avatars44} alt="profile-pic"/>
+                        <Image className="theme-color-default-img  img-fluid avatar-80 mb-4" src={avatars11} alt="profile-pic" />
+                        <Image className="theme-color-purple-img img-fluid avatar-80 mb-4" src={avatars22} alt="profile-pic" />
+                        <Image className="theme-color-blue-img img-fluid avatar-80 mb-4" src={avatars33} alt="profile-pic" />
+                        <Image className="theme-color-green-img img-fluid avatar-80 mb-4" src={avatars55} alt="profile-pic" />
+                        <Image className="theme-color-yellow-img img-fluid avatar-80 mb-4" src={avatars66} alt="profile-pic" />
+                        <Image className="theme-color-pink-img img-fluid avatar-80 mb-4" src={avatars44} alt="profile-pic" />
                         <div>
                            <h5 className="mb-3">Bini Jets</h5>
                         </div>
@@ -712,11 +712,11 @@ const Widgetbasic = memo(() => {
                      </div>
                      <div className="d-flex justify-content-between mt-3">
                         <div>
-                              <h2 className="counter"><CountUp  start={784} end={4500} duration={3}/></h2>
+                           <h2 className="counter"><CountUp start={784} end={4500} duration={3} /></h2>
                            <div>Operations</div>
                         </div>
                         <div>
-                              <h2 className="mb-0">3.9</h2>
+                           <h2 className="mb-0">3.9</h2>
                            <div>Medical Rating</div>
                         </div>
                      </div>
@@ -725,9 +725,9 @@ const Widgetbasic = memo(() => {
             </Col>
          </Row>
       </Fragment>
-    )
+   );
 }
-)
+);
 
-Widgetbasic.displayName="Widgetbasic"
-export default Widgetbasic
+Widgetbasic.displayName = "Widgetbasic";
+export default Widgetbasic;

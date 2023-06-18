@@ -15,7 +15,9 @@ import image18 from "../../../assets/images/settings/light/09.png";
 const MenuActiveStyle = memo((props) => {
   return (
     <Fragment>
-      <h5 className="mt-4 mb-3">Sidebar Active Style</h5>
+      <h5 className="mt-4 mb-3">
+        Sidebar Active Style
+      </h5>
       <div className="d-grid gap-3 grid-cols-2 mb-4">
         <RadioBtn
           btnName="sidebar_menu_style"

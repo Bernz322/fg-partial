@@ -8,7 +8,7 @@ import avatars1 from '../../../assets/images/avatars/01.png'
 import auth1 from '../../../assets/images/auth/04.png'
 
 const LockScreen = () => {
-   let history = useNavigate()
+   const history = useNavigate()
    return (
       <>
          <section className="login-content">

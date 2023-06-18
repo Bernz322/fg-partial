@@ -1,35 +1,46 @@
-import React, { useEffect, memo, Fragment } from "react";
-import { Row, Col, Dropdown, Button } from "react-bootstrap";
+import React, {
+  useEffect,
+  memo,
+  Fragment,
+} from "react";
+import {
+  Row,
+  Col,
+  Dropdown,
+  Button,
+} from "react-bootstrap";
 import { Link } from "react-router-dom";
 
-//circular
+// circular
 import Circularprogressbar from "../../components/circularprogressbar.js";
 
 // AOS
 import AOS from "aos";
 import "../../../node_modules/aos/dist/aos";
 import "../../../node_modules/aos/dist/aos.css";
-//apexcharts
+// apexcharts
 import Chart from "react-apexcharts";
 
-//swiper
-import { Swiper, SwiperSlide } from "swiper/react";
+// swiper
+import {
+  Swiper,
+  SwiperSlide,
+} from "swiper/react";
 import SwiperCore, { Navigation } from "swiper";
 
 // Import Swiper styles
 import "swiper/swiper-bundle.min.css";
-// import 'swiper/components/navigation/navigation.scss';
 
-//progressbar
+// progressbar
 import Progress from "../../components/progress.js";
-//img
+// img
 import shapes1 from "../../assets/images/shapes/01.png";
 import shapes2 from "../../assets/images/shapes/02.png";
 import shapes3 from "../../assets/images/shapes/03.png";
 import shapes4 from "../../assets/images/shapes/04.png";
 import shapes5 from "../../assets/images/shapes/05.png";
 
-//Count-up
+// Count-up
 import CountUp from "react-countup";
 
 // Redux Selector / Action
@@ -46,22 +57,26 @@ const Index = memo((props) => {
 
   const getVariableColor = () => {
     let prefix =
-      getComputedStyle(document.body).getPropertyValue("--prefix") || "bs-";
+      getComputedStyle(
+        document.body
+      ).getPropertyValue("--prefix") || "bs-";
     if (prefix) {
       prefix = prefix.trim();
     }
-    const color1 = getComputedStyle(document.body).getPropertyValue(
-      `--${prefix}primary`
-    );
-    const color2 = getComputedStyle(document.body).getPropertyValue(
-      `--${prefix}info`
-    );
-    const color3 = getComputedStyle(document.body).getPropertyValue(
+    const color1 = getComputedStyle(
+      document.body
+    ).getPropertyValue(`--${prefix}primary`);
+    const color2 = getComputedStyle(
+      document.body
+    ).getPropertyValue(`--${prefix}info`);
+    const color3 = getComputedStyle(
+      document.body
+    ).getPropertyValue(
       `--${prefix}primary-tint-20`
     );
-    const color4 = getComputedStyle(document.body).getPropertyValue(
-      `--${prefix}warning`
-    );
+    const color4 = getComputedStyle(
+      document.body
+    ).getPropertyValue(`--${prefix}warning`);
     return {
       primary: color1.trim(),
       info: color2.trim(),
@@ -71,7 +86,10 @@ const Index = memo((props) => {
   };
   const variableColors = getVariableColor();
 
-  const colors = [variableColors.primary, variableColors.info];
+  const colors = [
+    variableColors.primary,
+    variableColors.info,
+  ];
   useEffect(() => {
     return () => colors;
   });
@@ -80,7 +98,7 @@ const Index = memo((props) => {
     AOS.init({
       startEvent: "DOMContentLoaded",
       disable: function () {
-        var maxWidth = 996;
+        const maxWidth = 996;
         return window.innerWidth < maxWidth;
       },
       throttleDelay: 10,
@@ -134,9 +152,17 @@ const Index = memo((props) => {
           },
         },
         lines: {
-          show: false, //or just here to disable only x axis grids
+          show: false, // or just here to disable only x axis grids
         },
-        categories: ["Jan", "Feb", "Mar", "Apr", "Jun", "Jul", "Aug"],
+        categories: [
+          "Jan",
+          "Feb",
+          "Mar",
+          "Apr",
+          "Jun",
+          "Jul",
+          "Aug",
+        ],
       },
       grid: {
         show: false,
@@ -171,7 +197,7 @@ const Index = memo((props) => {
     ],
   };
 
-  //chart2
+  // chart2
   const chart2 = {
     options: {
       colors: colors,
@@ -223,7 +249,18 @@ const Index = memo((props) => {
         colors: ["transparent"],
       },
       xaxis: {
-        categories: ["S", "M", "T", "W", "T", "F", "S", "M", "T", "W"],
+        categories: [
+          "S",
+          "M",
+          "T",
+          "W",
+          "T",
+          "F",
+          "S",
+          "M",
+          "T",
+          "W",
+        ],
         labels: {
           minHeight: 20,
           maxHeight: 20,
@@ -258,11 +295,15 @@ const Index = memo((props) => {
     series: [
       {
         name: "Successful deals",
-        data: [30, 50, 35, 60, 40, 60, 60, 30, 50, 35],
+        data: [
+          30, 50, 35, 60, 40, 60, 60, 30, 50, 35,
+        ],
       },
       {
         name: "Failed deals",
-        data: [40, 50, 55, 50, 30, 80, 30, 40, 50, 55],
+        data: [
+          40, 50, 55, 50, 30, 80, 30, 40, 50, 55,
+        ],
       },
     ],
   };
@@ -271,7 +312,11 @@ const Index = memo((props) => {
       <Row>
         <Col md="12" lg="12">
           <Row className="row-cols-1">
-            <div className="overflow-hidden d-slider1 " data-aos="fade-up" data-aos-delay="800">
+            <div
+              className="overflow-hidden d-slider1 "
+              data-aos="fade-up"
+              data-aos-delay="800"
+            >
               <Swiper
                 className="p-0 m-0 mb-2 list-inline "
                 slidesPerView={5}
@@ -288,21 +333,25 @@ const Index = memo((props) => {
                   1500: { slidesPerView: 4 },
                   1920: { slidesPerView: 4 },
                   2040: { slidesPerView: 7 },
-                  2440: { slidesPerView: 8 }
+                  2440: { slidesPerView: 8 },
                 }}
-    
               >
-                <SwiperSlide className="card card-slide" >
+                <SwiperSlide className="card card-slide">
                   <div className="card-body">
                     <div className="progress-widget">
                       <Circularprogressbar
-                        stroke={variableColors.primary}
+                        stroke={
+                          variableColors.primary
+                        }
                         width="60px"
                         height="60px"
                         Linecap="rounded"
                         trailstroke="#ddd"
                         strokewidth="4px"
-                        style={{ width: 60, height: 60 }}
+                        style={{
+                          width: 60,
+                          height: 60,
+                        }}
                         value={90}
                         id="circle-progress-01"
                       >
@@ -319,9 +368,17 @@ const Index = memo((props) => {
                         </svg>
                       </Circularprogressbar>
                       <div className="progress-detail">
-                        <p className="mb-2">Total Sales</p>
+                        <p className="mb-2">
+                          Total Sales
+                        </p>
                         <h4 className="counter">
-                          $<CountUp start={120} end={560} duration={3} />K
+                          $
+                          <CountUp
+                            start={120}
+                            end={560}
+                            duration={3}
+                          />
+                          K
                         </h4>
                       </div>
                     </div>
@@ -331,13 +388,18 @@ const Index = memo((props) => {
                   <div className="card-body">
                     <div className="progress-widget">
                       <Circularprogressbar
-                        stroke={variableColors.info}
+                        stroke={
+                          variableColors.info
+                        }
                         width="60px"
                         height="60px"
                         trailstroke="#ddd"
                         strokewidth="4px"
                         Linecap="rounded"
-                        style={{ width: 60, height: 60 }}
+                        style={{
+                          width: 60,
+                          height: 60,
+                        }}
                         value={60}
                         id="circle-progress-02"
                       >
@@ -354,9 +416,17 @@ const Index = memo((props) => {
                         </svg>
                       </Circularprogressbar>
                       <div className="progress-detail">
-                        <p className="mb-2">Total Profit</p>
+                        <p className="mb-2">
+                          Total Profit
+                        </p>
                         <h4 className="counter">
-                          $<CountUp start={20} end={158} duration={3} />K
+                          $
+                          <CountUp
+                            start={20}
+                            end={158}
+                            duration={3}
+                          />
+                          K
                         </h4>
                       </div>
                     </div>
@@ -366,17 +436,26 @@ const Index = memo((props) => {
                   <div className="card-body">
                     <div className="progress-widget">
                       <Circularprogressbar
-                        stroke={variableColors.primary}
+                        stroke={
+                          variableColors.primary
+                        }
                         width="60px"
                         height="60px"
                         trailstroke="#ddd"
                         strokewidth="4px"
                         Linecap="rounded"
-                        style={{ width: 60, height: 60 }}
+                        style={{
+                          width: 60,
+                          height: 60,
+                        }}
                         value={70}
                         id="circle-progress-03"
                       >
-                        <svg className="" width="24" viewBox="0 0 24 24">
+                        <svg
+                          className=""
+                          width="24"
+                          viewBox="0 0 24 24"
+                        >
                           <path
                             fill="currentColor"
                             d="M19,6.41L17.59,5L7,15.59V9H5V19H15V17H8.41L19,6.41Z"
@@ -384,9 +463,17 @@ const Index = memo((props) => {
                         </svg>
                       </Circularprogressbar>
                       <div className="progress-detail">
-                        <p className="mb-2">Total Cost</p>
+                        <p className="mb-2">
+                          Total Cost
+                        </p>
                         <h4 className="counter">
-                          $<CountUp start={120} end={378} duration={3} />K
+                          $
+                          <CountUp
+                            start={120}
+                            end={378}
+                            duration={3}
+                          />
+                          K
                         </h4>
                       </div>
                     </div>
@@ -396,13 +483,18 @@ const Index = memo((props) => {
                   <div className="card-body">
                     <div className="progress-widget">
                       <Circularprogressbar
-                        stroke={variableColors.info}
+                        stroke={
+                          variableColors.info
+                        }
                         width="60px"
                         height="60px"
                         trailstroke="#ddd"
                         strokewidth="4px"
                         Linecap="rounded"
-                        style={{ width: 60, height: 60 }}
+                        style={{
+                          width: 60,
+                          height: 60,
+                        }}
                         value={60}
                         id="circle-progress-04"
                       >
@@ -419,9 +511,17 @@ const Index = memo((props) => {
                         </svg>
                       </Circularprogressbar>
                       <div className="progress-detail">
-                        <p className="mb-2">Revenue</p>
+                        <p className="mb-2">
+                          Revenue
+                        </p>
                         <h4 className="counter">
-                          $<CountUp start={212} end={742} duration={3} />K
+                          $
+                          <CountUp
+                            start={212}
+                            end={742}
+                            duration={3}
+                          />
+                          K
                         </h4>
                       </div>
                     </div>
@@ -431,13 +531,18 @@ const Index = memo((props) => {
                   <div className="card-body">
                     <div className="progress-widget">
                       <Circularprogressbar
-                        stroke={variableColors.primary}
+                        stroke={
+                          variableColors.primary
+                        }
                         width="60px"
                         height="60px"
                         trailstroke="#ddd"
                         strokewidth="4px"
                         Linecap="rounded"
-                        style={{ width: 60, height: 60 }}
+                        style={{
+                          width: 60,
+                          height: 60,
+                        }}
                         value={50}
                         id="circle-progress-05"
                       >
@@ -454,9 +559,17 @@ const Index = memo((props) => {
                         </svg>
                       </Circularprogressbar>
                       <div className="progress-detail">
-                        <p className="mb-2">Net Income</p>
+                        <p className="mb-2">
+                          Net Income
+                        </p>
                         <h4 className="counter">
-                          $<CountUp start={35} end={150} duration={3} />K
+                          $
+                          <CountUp
+                            start={35}
+                            end={150}
+                            duration={3}
+                          />
+                          K
                         </h4>
                       </div>
                     </div>
@@ -466,14 +579,19 @@ const Index = memo((props) => {
                   <div className="card-body">
                     <div className="progress-widget">
                       <Circularprogressbar
-                        stroke={variableColors.info}
+                        stroke={
+                          variableColors.info
+                        }
                         width="60px"
                         height="60px"
                         trailstroke="#ddd"
                         Linecap="rounded"
                         strokewidth="4px"
                         value={40}
-                        style={{ width: 60, height: 60 }}
+                        style={{
+                          width: 60,
+                          height: 60,
+                        }}
                         id="circle-progress-06"
                       >
                         <svg
@@ -489,9 +607,16 @@ const Index = memo((props) => {
                         </svg>
                       </Circularprogressbar>
                       <div className="progress-detail">
-                        <p className="mb-2">Today</p>
+                        <p className="mb-2">
+                          Today
+                        </p>
                         <h4 className="counter">
-                          $<CountUp start={652} end={4600} duration={3} />
+                          $
+                          <CountUp
+                            start={652}
+                            end={4600}
+                            duration={3}
+                          />
                         </h4>
                       </div>
                     </div>
@@ -508,7 +633,10 @@ const Index = memo((props) => {
                         width="60px"
                         height="60px"
                         value={30}
-                        style={{ width: 60, height: 60 }}
+                        style={{
+                          width: 60,
+                          height: 60,
+                        }}
                         id="circle-progress-07"
                       >
                         <svg
@@ -524,7 +652,9 @@ const Index = memo((props) => {
                         </svg>
                       </Circularprogressbar>
                       <div className="progress-detail">
-                        <p className="mb-2">Members</p>
+                        <p className="mb-2">
+                          Members
+                        </p>
                         <h4 className="counter">
                           <CountUp
                             start={2}
@@ -547,11 +677,19 @@ const Index = memo((props) => {
         <Col md="12" lg="8">
           <Row>
             <Col md="12">
-              <div className="card" data-aos="fade-up" data-aos-delay="800">
+              <div
+                className="card"
+                data-aos="fade-up"
+                data-aos-delay="800"
+              >
                 <div className="flex-wrap card-header d-flex justify-content-between">
                   <div className="header-title">
-                    <h4 className="card-title">$855.8K</h4>
-                    <p className="mb-0">Gross Sales</p>
+                    <h4 className="card-title">
+                      $855.8K
+                    </h4>
+                    <p className="mb-0">
+                      Gross Sales
+                    </p>
                   </div>
                   <div className="d-flex align-items-center align-self-center">
                     <div className="d-flex align-items-center text-primary">
@@ -571,7 +709,9 @@ const Index = memo((props) => {
                         </g>
                       </svg>
                       <div className="ms-2">
-                        <span className="text-gray">Sales</span>
+                        <span className="text-gray">
+                          Sales
+                        </span>
                       </div>
                     </div>
                     <div className="d-flex align-items-center ms-3 text-info">
@@ -591,7 +731,9 @@ const Index = memo((props) => {
                         </g>
                       </svg>
                       <div className="ms-2">
-                        <span className="text-gray">Cost</span>
+                        <span className="text-gray">
+                          Cost
+                        </span>
                       </div>
                     </div>
                   </div>
@@ -605,9 +747,15 @@ const Index = memo((props) => {
                       This Week
                     </Dropdown.Toggle>
                     <Dropdown.Menu>
-                      <Dropdown.Item href="#">This Week</Dropdown.Item>
-                      <Dropdown.Item href="#">This Month</Dropdown.Item>
-                      <Dropdown.Item href="#">This Year</Dropdown.Item>
+                      <Dropdown.Item href="#">
+                        This Week
+                      </Dropdown.Item>
+                      <Dropdown.Item href="#">
+                        This Month
+                      </Dropdown.Item>
+                      <Dropdown.Item href="#">
+                        This Year
+                      </Dropdown.Item>
                     </Dropdown.Menu>
                   </Dropdown>
                 </div>
@@ -622,10 +770,16 @@ const Index = memo((props) => {
               </div>
             </Col>
             <Col md="12" xl="6">
-              <div className="card" data-aos="fade-up" data-aos-delay="900">
+              <div
+                className="card"
+                data-aos="fade-up"
+                data-aos-delay="900"
+              >
                 <div className="flex-wrap card-header d-flex justify-content-between">
                   <div className="header-title">
-                    <h4 className="card-title">Earnings</h4>
+                    <h4 className="card-title">
+                      Earnings
+                    </h4>
                   </div>
                   <Dropdown>
                     <Dropdown.Toggle
@@ -637,9 +791,15 @@ const Index = memo((props) => {
                       This Week
                     </Dropdown.Toggle>
                     <Dropdown.Menu>
-                      <Dropdown.Item href="#">This Week</Dropdown.Item>
-                      <Dropdown.Item href="#">This Month</Dropdown.Item>
-                      <Dropdown.Item href="#">This Year</Dropdown.Item>
+                      <Dropdown.Item href="#">
+                        This Week
+                      </Dropdown.Item>
+                      <Dropdown.Item href="#">
+                        This Month
+                      </Dropdown.Item>
+                      <Dropdown.Item href="#">
+                        This Year
+                      </Dropdown.Item>
                     </Dropdown.Menu>
                   </Dropdown>
                 </div>
@@ -671,7 +831,9 @@ const Index = memo((props) => {
                           </g>
                         </svg>
                         <div className="ms-3">
-                          <span className="text-gray">Fashion</span>
+                          <span className="text-gray">
+                            Fashion
+                          </span>
                           <h6>251K</h6>
                         </div>
                       </div>
@@ -693,7 +855,9 @@ const Index = memo((props) => {
                           </g>
                         </svg>
                         <div className="ms-3">
-                          <span className="text-gray">Accessories</span>
+                          <span className="text-gray">
+                            Accessories
+                          </span>
                           <h6>176K</h6>
                         </div>
                       </div>
@@ -703,10 +867,16 @@ const Index = memo((props) => {
               </div>
             </Col>
             <Col md="12" xl="6">
-              <div className="card" data-aos="fade-up" data-aos-delay="1000">
+              <div
+                className="card"
+                data-aos="fade-up"
+                data-aos-delay="1000"
+              >
                 <div className="flex-wrap card-header d-flex justify-content-between">
                   <div className="header-title">
-                    <h4 className="card-title">Conversions</h4>
+                    <h4 className="card-title">
+                      Conversions
+                    </h4>
                   </div>
                   <Dropdown>
                     <Dropdown.Toggle
@@ -718,9 +888,15 @@ const Index = memo((props) => {
                       This Week
                     </Dropdown.Toggle>
                     <Dropdown.Menu>
-                      <Dropdown.Item href="#">This Week</Dropdown.Item>
-                      <Dropdown.Item href="#">This Month</Dropdown.Item>
-                      <Dropdown.Item href="#">This Year</Dropdown.Item>
+                      <Dropdown.Item href="#">
+                        This Week
+                      </Dropdown.Item>
+                      <Dropdown.Item href="#">
+                        This Month
+                      </Dropdown.Item>
+                      <Dropdown.Item href="#">
+                        This Year
+                      </Dropdown.Item>
                     </Dropdown.Menu>
                   </Dropdown>
                 </div>
@@ -743,7 +919,9 @@ const Index = memo((props) => {
               >
                 <div className="flex-wrap card-header d-flex justify-content-between">
                   <div className="header-title">
-                    <h4 className="mb-2 card-title">Enterprise Clients</h4>
+                    <h4 className="mb-2 card-title">
+                      Enterprise Clients
+                    </h4>
                     <p className="mb-0">
                       <svg
                         className="me-2"
@@ -784,22 +962,33 @@ const Index = memo((props) => {
                                 src={shapes1}
                                 alt="profile"
                               />
-                              <h6>Addidis Sportwear</h6>
+                              <h6>
+                                Addidis Sportwear
+                              </h6>
                             </div>
                           </td>
                           <td>
                             <div className="iq-media-group iq-media-group-1">
-                              <Link to="#" className="iq-media-1">
+                              <Link
+                                to="#"
+                                className="iq-media-1"
+                              >
                                 <div className="icon iq-icon-box-3 rounded-pill">
                                   SP
                                 </div>
                               </Link>
-                              <Link to="#" className="iq-media-1">
+                              <Link
+                                to="#"
+                                className="iq-media-1"
+                              >
                                 <div className="icon iq-icon-box-3 rounded-pill">
                                   PP
                                 </div>
                               </Link>
-                              <Link to="#" className="iq-media-1">
+                              <Link
+                                to="#"
+                                className="iq-media-1"
+                              >
                                 <div className="icon iq-icon-box-3 rounded-pill">
                                   MM
                                 </div>
@@ -818,7 +1007,9 @@ const Index = memo((props) => {
                               value={60}
                               minvalue={0}
                               maxvalue={100}
-                              style={{ height: "4px" }}
+                              style={{
+                                height: "4px",
+                              }}
                             />
                           </td>
                         </tr>
@@ -830,17 +1021,26 @@ const Index = memo((props) => {
                                 src={shapes5}
                                 alt="profile"
                               />
-                              <h6>Netflixer Platforms</h6>
+                              <h6>
+                                Netflixer
+                                Platforms
+                              </h6>
                             </div>
                           </td>
                           <td>
                             <div className="iq-media-group iq-media-group-1">
-                              <Link to="#" className="iq-media-1">
+                              <Link
+                                to="#"
+                                className="iq-media-1"
+                              >
                                 <div className="icon iq-icon-box-3 rounded-pill">
                                   SP
                                 </div>
                               </Link>
-                              <Link to="#" className="iq-media-1">
+                              <Link
+                                to="#"
+                                className="iq-media-1"
+                              >
                                 <div className="icon iq-icon-box-3 rounded-pill">
                                   PP
                                 </div>
@@ -859,7 +1059,9 @@ const Index = memo((props) => {
                               value={25}
                               minvalue={0}
                               maxvalue={100}
-                              style={{ height: "4px" }}
+                              style={{
+                                height: "4px",
+                              }}
                             />
                           </td>
                         </tr>
@@ -871,17 +1073,25 @@ const Index = memo((props) => {
                                 src={shapes2}
                                 alt="profile"
                               />
-                              <h6>Shopifi Stores</h6>
+                              <h6>
+                                Shopifi Stores
+                              </h6>
                             </div>
                           </td>
                           <td>
                             <div className="iq-media-group iq-media-group-1">
-                              <Link to="#" className="iq-media-1">
+                              <Link
+                                to="#"
+                                className="iq-media-1"
+                              >
                                 <div className="icon iq-icon-box-3 rounded-pill">
                                   PP
                                 </div>
                               </Link>
-                              <Link to="#" className="iq-media-1">
+                              <Link
+                                to="#"
+                                className="iq-media-1"
+                              >
                                 <div className="icon iq-icon-box-3 rounded-pill">
                                   TP
                                 </div>
@@ -900,7 +1110,9 @@ const Index = memo((props) => {
                               value={100}
                               minvalue={0}
                               maxvalue={100}
-                              style={{ height: "4px" }}
+                              style={{
+                                height: "4px",
+                              }}
                             />
                           </td>
                         </tr>
@@ -912,27 +1124,42 @@ const Index = memo((props) => {
                                 src={shapes3}
                                 alt="profile"
                               />
-                              <h6>Bootstrap Technologies</h6>
+                              <h6>
+                                Bootstrap
+                                Technologies
+                              </h6>
                             </div>
                           </td>
                           <td>
                             <div className="iq-media-group iq-media-group-1">
-                              <Link to="#" className="iq-media-1">
+                              <Link
+                                to="#"
+                                className="iq-media-1"
+                              >
                                 <div className="icon iq-icon-box-3 rounded-pill">
                                   SP
                                 </div>
                               </Link>
-                              <Link to="#" className="iq-media-1">
+                              <Link
+                                to="#"
+                                className="iq-media-1"
+                              >
                                 <div className="icon iq-icon-box-3 rounded-pill">
                                   PP
                                 </div>
                               </Link>
-                              <Link to="#" className="iq-media-1">
+                              <Link
+                                to="#"
+                                className="iq-media-1"
+                              >
                                 <div className="icon iq-icon-box-3 rounded-pill">
                                   MM
                                 </div>
                               </Link>
-                              <Link to="#" className="iq-media-1">
+                              <Link
+                                to="#"
+                                className="iq-media-1"
+                              >
                                 <div className="icon iq-icon-box-3 rounded-pill">
                                   TP
                                 </div>
@@ -951,7 +1178,9 @@ const Index = memo((props) => {
                               value={100}
                               minvalue={0}
                               maxvalue={100}
-                              style={{ height: "4px" }}
+                              style={{
+                                height: "4px",
+                              }}
                             />
                           </td>
                         </tr>
@@ -963,12 +1192,17 @@ const Index = memo((props) => {
                                 src={shapes4}
                                 alt="profile"
                               />
-                              <h6>Community First</h6>
+                              <h6>
+                                Community First
+                              </h6>
                             </div>
                           </td>
                           <td>
                             <div className="iq-media-group iq-media-group-1">
-                              <Link to="#" className="iq-media-1">
+                              <Link
+                                to="#"
+                                className="iq-media-1"
+                              >
                                 <div className="icon iq-icon-box-3 rounded-pill">
                                   MM
                                 </div>
@@ -987,7 +1221,9 @@ const Index = memo((props) => {
                               value={75}
                               minvalue={0}
                               maxvalue={100}
-                              style={{ height: "4px" }}
+                              style={{
+                                height: "4px",
+                              }}
                             />
                           </td>
                         </tr>
@@ -1011,8 +1247,12 @@ const Index = memo((props) => {
                   <div className="p-4 border border-white rounded primary-gradient-card">
                     <div className="d-flex justify-content-between align-items-center">
                       <div>
-                        <h5 className="font-weight-bold">VISA </h5>
-                        <p className="mb-0">PREMIUM ACCOUNT</p>
+                        <h5 className="font-weight-bold">
+                          VISA{" "}
+                        </h5>
+                        <p className="mb-0">
+                          PREMIUM ACCOUNT
+                        </p>
                       </div>
                       <div className="master-card-content">
                         <svg
@@ -1041,19 +1281,33 @@ const Index = memo((props) => {
                     </div>
                     <div className="my-4">
                       <div className="card-number">
-                        <span className="fs-5 me-2">5789</span>
-                        <span className="fs-5 me-2">****</span>
-                        <span className="fs-5 me-2">****</span>
-                        <span className="fs-5">2847</span>
+                        <span className="fs-5 me-2">
+                          5789
+                        </span>
+                        <span className="fs-5 me-2">
+                          ****
+                        </span>
+                        <span className="fs-5 me-2">
+                          ****
+                        </span>
+                        <span className="fs-5">
+                          2847
+                        </span>
                       </div>
                     </div>
                     <div className="mb-2 d-flex align-items-center justify-content-between">
-                      <p className="mb-0">Card holder</p>
-                      <p className="mb-0">Expire Date</p>
+                      <p className="mb-0">
+                        Card holder
+                      </p>
+                      <p className="mb-0">
+                        Expire Date
+                      </p>
                     </div>
                     <div className="d-flex align-items-center justify-content-between">
                       <h6>Mike Smith</h6>
-                      <h6 className="ms-5">06/11</h6>
+                      <h6 className="ms-5">
+                        06/11
+                      </h6>
                     </div>
                   </div>
                 </div>
@@ -1079,7 +1333,9 @@ const Index = memo((props) => {
                       </div>
                       <div className="ms-3">
                         <h5>1153</h5>
-                        <small className="mb-0">Products</small>
+                        <small className="mb-0">
+                          Products
+                        </small>
                       </div>
                     </div>
                     <div className="d-flex align-itmes-center">
@@ -1102,20 +1358,26 @@ const Index = memo((props) => {
                       </div>
                       <div className="ms-3">
                         <h5>81K</h5>
-                        <small className="mb-0">Order Served</small>
+                        <small className="mb-0">
+                          Order Served
+                        </small>
                       </div>
                     </div>
                   </div>
                   <div className="mb-4">
                     <div className="flex-wrap d-flex justify-content-between">
-                      <h2 className="mb-2">$405,012,300</h2>
+                      <h2 className="mb-2">
+                        $405,012,300
+                      </h2>
                       <div>
                         <span className="badge bg-success rounded-pill">
                           YoY 24%
                         </span>
                       </div>
                     </div>
-                    <p className="text-info">Life time sales</p>
+                    <p className="text-info">
+                      Life time sales
+                    </p>
                   </div>
                   <div className="grid-cols-2 d-grid gap">
                     <button className="btn btn-primary text-uppercase">
@@ -1127,27 +1389,43 @@ const Index = memo((props) => {
                   </div>
                 </div>
               </div>
-              <div className="card" data-aos="fade-up" data-aos-delay="500">
+              <div
+                className="card"
+                data-aos="fade-up"
+                data-aos-delay="500"
+              >
                 <div className="text-center card-body d-flex justify-content-around">
                   <div>
                     <h2 className="mb-2">
                       750<small>K</small>
                     </h2>
-                    <p className="mb-0 text-gray">Website Visitors</p>
+                    <p className="mb-0 text-gray">
+                      Website Visitors
+                    </p>
                   </div>
                   <hr className="hr-vertial" />
                   <div>
-                    <h2 className="mb-2">7,500</h2>
-                    <p className="mb-0 text-gray">New Customers</p>
+                    <h2 className="mb-2">
+                      7,500
+                    </h2>
+                    <p className="mb-0 text-gray">
+                      New Customers
+                    </p>
                   </div>
                 </div>
               </div>
             </Col>
             <Col md="12">
-              <div className="card" data-aos="fade-up" data-aos-delay="600">
+              <div
+                className="card"
+                data-aos="fade-up"
+                data-aos-delay="600"
+              >
                 <div className="flex-wrap card-header d-flex justify-content-between">
                   <div className="header-title">
-                    <h4 className="mb-2 card-title">Activity overview</h4>
+                    <h4 className="mb-2 card-title">
+                      Activity overview
+                    </h4>
                     <p className="mb-0">
                       <svg
                         className="me-2"
@@ -1168,36 +1446,56 @@ const Index = memo((props) => {
                   <div className="mb-2 d-flex profile-media align-items-top">
                     <div className="mt-1 profile-dots-pills border-primary"></div>
                     <div className="ms-4">
-                      <h6 className="mb-1 ">$2400, Purchase</h6>
-                      <span className="mb-0">11 JUL 8:10 PM</span>
+                      <h6 className="mb-1 ">
+                        $2400, Purchase
+                      </h6>
+                      <span className="mb-0">
+                        11 JUL 8:10 PM
+                      </span>
                     </div>
                   </div>
                   <div className="mb-2 d-flex profile-media align-items-top">
                     <div className="mt-1 profile-dots-pills border-primary"></div>
                     <div className="ms-4">
-                      <h6 className="mb-1 ">New order #8744152</h6>
-                      <span className="mb-0">11 JUL 11 PM</span>
+                      <h6 className="mb-1 ">
+                        New order #8744152
+                      </h6>
+                      <span className="mb-0">
+                        11 JUL 11 PM
+                      </span>
                     </div>
                   </div>
                   <div className="mb-2 d-flex profile-media align-items-top">
                     <div className="mt-1 profile-dots-pills border-primary"></div>
                     <div className="ms-4">
-                      <h6 className="mb-1 ">Affiliate Payout</h6>
-                      <span className="mb-0">11 JUL 7:64 PM</span>
+                      <h6 className="mb-1 ">
+                        Affiliate Payout
+                      </h6>
+                      <span className="mb-0">
+                        11 JUL 7:64 PM
+                      </span>
                     </div>
                   </div>
                   <div className="mb-2 d-flex profile-media align-items-top">
                     <div className="mt-1 profile-dots-pills border-primary"></div>
                     <div className="ms-4">
-                      <h6 className="mb-1 ">New user added</h6>
-                      <span className="mb-0">11 JUL 1:21 AM</span>
+                      <h6 className="mb-1 ">
+                        New user added
+                      </h6>
+                      <span className="mb-0">
+                        11 JUL 1:21 AM
+                      </span>
                     </div>
                   </div>
                   <div className="mb-1 d-flex profile-media align-items-top">
                     <div className="mt-1 profile-dots-pills border-primary"></div>
                     <div className="ms-4">
-                      <h6 className="mb-1 ">Product added</h6>
-                      <span className="mb-0">11 JUL 4:50 AM</span>
+                      <h6 className="mb-1 ">
+                        Product added
+                      </h6>
+                      <span className="mb-0">
+                        11 JUL 4:50 AM
+                      </span>
                     </div>
                   </div>
                 </div>
@@ -1208,6 +1506,7 @@ const Index = memo((props) => {
       </Row>
     </Fragment>
   );
-})
+});
 
-export default Index
+Index.displayName = "Dashboard Index";
+export default Index;

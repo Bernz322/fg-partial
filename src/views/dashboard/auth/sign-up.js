@@ -11,7 +11,7 @@ import linkedin from '../../../assets/images/brands/li.svg'
 import auth5 from '../../../assets/images/auth/05.png'
 
 const SignUp = () => {
-   let history = useNavigate()
+   const history = useNavigate()
    return (
       <>
          <section className="login-content">

@@ -4,30 +4,30 @@ import Card from '../../../src/components/Card'
 
 const OffCanvass =() =>{
 
-    //tab
+    // tab
     const [toggleState, setToggleState] = useState(1);
 
-     //offcanves
+     // offcanves
     const [show5, setShow5] = useState(false);
 
     const handleClose5 = () => setShow5(false);
     const handleShow5 = () => setShow5(true);
-    //1
+    // 1
     const [show6, setShow6] = useState(false);
 
     const handleClose6 = () => setShow6(false);
     const handleShow6 = () => setShow6(true);
-    //2
+    // 2
     const [show7, setShow7] = useState(false);
 
     const handleClose7 = () => setShow7(false);
     const handleShow7 = () => setShow7(true);
-    //3
+    // 3
     const [show8, setShow8] = useState(false);
 
     const handleClose8 = () => setShow8(false);
     const handleShow8 = () => setShow8(true);
-        //4
+        // 4
     const [show9, setShow9] = useState(false);
 
     const handleClose9 = () => setShow9(false);

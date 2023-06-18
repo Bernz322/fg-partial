@@ -1,6 +1,6 @@
 import { useState, useEffect, memo, Fragment } from "react";
 
-//react-bootstrap
+// react-bootstrap
 import { Offcanvas, Row, Col } from "react-bootstrap";
 
 // Redux Selector / Action
@@ -110,7 +110,7 @@ const SettingOffCanvas = memo((props) => {
           <Row>
             <Col lg={12}>
               <div className="">
-                {/*<div className="px-3 pt-3 text-center">
+                {/* <div className="px-3 pt-3 text-center">
                   <h5 className="d-inline-block">Style Setting</h5>
       </div>*/}
                 <div className="p-3">

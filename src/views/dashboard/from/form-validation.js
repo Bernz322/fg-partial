@@ -3,7 +3,7 @@ import {Row,Col,Form,Button} from 'react-bootstrap'
 import Card from '../../../components/Card'
 
 const FormValidation = () => {
- //form validation
+ // form validation
    const [validated, setValidated] = useState(false);
    const handleSubmit = (event) => {
    const form = event.currentTarget;

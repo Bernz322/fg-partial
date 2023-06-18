@@ -2,8 +2,12 @@ import { memo, Fragment, useState } from "react";
 import RadioBtn from "../elements/radio-btn";
 
 import _ from "lodash";
-//react-bootstrap
-import { Tooltip, OverlayTrigger, Collapse } from "react-bootstrap";
+// react-bootstrap
+import {
+  Tooltip,
+  OverlayTrigger,
+  Collapse,
+} from "react-bootstrap";
 
 // Images
 import image1 from "../../../assets/images/settings/dark/01.png";
@@ -12,6 +16,7 @@ import image3 from "../../../assets/images/settings/dark/02.png";
 import image4 from "../../../assets/images/settings/light/02.png";
 
 import { useDispatch } from "react-redux";
+// eslint-disable-next-line camelcase
 import { theme_color } from "../../../store/setting/actions";
 
 const ThemeScheme = memo((props) => {
@@ -21,15 +26,30 @@ const ThemeScheme = memo((props) => {
 
   const colorValue = props.themeColor;
 
-  const updateColor = (colorClassName, colorObj) => {
-    dispatch(theme_color({ value: colorClassName, colors: colorObj }));
+  const updateColor = (
+    colorClassName,
+    colorObj
+  ) => {
+    dispatch(
+      theme_color({
+        value: colorClassName,
+        colors: colorObj,
+      })
+    );
   };
 
-  const slowChange = _.debounce((colorClassName, colorObj) => {
-    updateColor(colorClassName, colorObj);
-  }, 300);
+  const slowChange = _.debounce(
+    (colorClassName, colorObj) => {
+      updateColor(colorClassName, colorObj);
+    },
+    300
+  );
 
-  const colorChange = (colorClassName, colorObj, isDebounce = false) => {
+  const colorChange = (
+    colorClassName,
+    colorObj,
+    isDebounce = false
+  ) => {
     if (isDebounce) {
       slowChange(colorClassName, colorObj);
     } else {
@@ -54,7 +74,10 @@ const ThemeScheme = memo((props) => {
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
           >
-            <path fill="currentColor" d="M7,2V13H10V22L17,10H13L17,2H7Z" />
+            <path
+              fill="currentColor"
+              d="M7,2V13H10V22L17,10H13L17,2H7Z"
+            />
           </svg>
           Auto
         </RadioBtn>
@@ -102,9 +125,11 @@ const ThemeScheme = memo((props) => {
       </div>
       <hr className="hr-horizontal" />
       <div className="d-flex align-items-center justify-content-between">
-        <h5 className="mt-4 mb-3">Color Customizer</h5>
+        <h5 className="mt-4 mb-3">
+          Color Customizer
+        </h5>
         <div className="d-flex align-items-center">
-          {/*<Link to="#custom-color" role="button" onClick={() => setOpen(!open)} aria-controls="example-collapse-text" aria-expanded={open}>Custom</Link>*/}
+          {/* <Link to="#custom-color" role="button" onClick={() => setOpen(!open)} aria-controls="example-collapse-text" aria-expanded={open}>Custom</Link>*/}
           <div data-setting="radio">
             <input
               type="radio"
@@ -123,7 +148,9 @@ const ThemeScheme = memo((props) => {
             >
               <OverlayTrigger
                 placement="top"
-                overlay={<Tooltip>Reset Color</Tooltip>}
+                overlay={
+                  <Tooltip>Reset Color</Tooltip>
+                }
               >
                 <div
                   data-value="theme-color-default"
@@ -132,10 +159,15 @@ const ThemeScheme = memo((props) => {
                   title="Default"
                   data-bs-original-title="Default"
                   onClick={() => {
-                    colorChange("theme-color-default", {
-                      "--{{prefix}}primary": "#3a57e8",
-                      "--{{prefix}}info": "#4bc7d2",
-                    });
+                    colorChange(
+                      "theme-color-default",
+                      {
+                        "--{{prefix}}primary":
+                          "#3a57e8",
+                        "--{{prefix}}info":
+                          "#4bc7d2",
+                      }
+                    );
                   }}
                 >
                   <svg
@@ -164,43 +196,64 @@ const ThemeScheme = memo((props) => {
       <Collapse in={open}>
         <div>
           <div className="form-group d-flex justify-content-between align-items-center">
-            <label htmlFor="custom-primary-color">Primary</label>
+            <label htmlFor="custom-primary-color">
+              Primary
+            </label>
             <input
               name="theme_color"
               data-extra="primary"
               onInput={(e) =>
                 colorChange(
                   "custom-color",
-                  { "--{{prefix}}primary": e.target.value },
+                  {
+                    "--{{prefix}}primary":
+                      e.target.value,
+                  },
                   true
                 )
               }
               type="color"
               id="custom-primary-color"
-              value={colorValue.colors["--{{prefix}}primary"]}
+              value={
+                colorValue.colors[
+                  "--{{prefix}}primary"
+                ]
+              }
             />
           </div>
           <div className="form-group d-flex d-flex justify-content-between align-items-center">
-            <label htmlFor="custom-info-color">Secondary</label>
+            <label htmlFor="custom-info-color">
+              Secondary
+            </label>
             <input
               name="theme_color"
               data-extra="info"
               onInput={(e) =>
                 colorChange(
                   "custom-color",
-                  { "--{{prefix}}info": e.target.value },
+                  {
+                    "--{{prefix}}info":
+                      e.target.value,
+                  },
                   true
                 )
               }
               type="color"
               id="custom-info-color"
-              value={colorValue.colors["--{{prefix}}info"]}
+              value={
+                colorValue.colors[
+                  "--{{prefix}}info"
+                ]
+              }
             />
           </div>
         </div>
       </Collapse>
       <div className="grid-cols-5 mb-4 d-grid gap-3">
-        <OverlayTrigger placement="top" overlay={<Tooltip>Theme-1</Tooltip>}>
+        <OverlayTrigger
+          placement="top"
+          overlay={<Tooltip>Theme-1</Tooltip>}
+        >
           <div>
             <input
               type="radio"
@@ -211,10 +264,14 @@ const ThemeScheme = memo((props) => {
               onClick={() =>
                 colorChange("theme-color-blue", {
                   "--{{prefix}}info": "#573BFF",
-                  "--{{prefix}}primary": "#00C3F9",
+                  "--{{prefix}}primary":
+                    "#00C3F9",
                 })
               }
-              defaultChecked={colorValue.value === "theme-color-blue"}
+              defaultChecked={
+                colorValue.value ===
+                "theme-color-blue"
+              }
             />
             <label
               className={`btn btn-border d-block bg-transparent`}
@@ -231,13 +288,24 @@ const ThemeScheme = memo((props) => {
                 height="26"
               >
                 {" "}
-                <circle cx="12" cy="12" r="10" fill="#00C3F9" />{" "}
-                <path d="M2,12 a1,1 1 1,0 20,0" fill="#573BFF" />
+                <circle
+                  cx="12"
+                  cy="12"
+                  r="10"
+                  fill="#00C3F9"
+                />{" "}
+                <path
+                  d="M2,12 a1,1 1 1,0 20,0"
+                  fill="#573BFF"
+                />
               </svg>
             </label>
           </div>
         </OverlayTrigger>
-        <OverlayTrigger placement="top" overlay={<Tooltip>Theme-2</Tooltip>}>
+        <OverlayTrigger
+          placement="top"
+          overlay={<Tooltip>Theme-2</Tooltip>}
+        >
           <div>
             <input
               type="radio"
@@ -248,10 +316,14 @@ const ThemeScheme = memo((props) => {
               onClick={() =>
                 colorChange("theme-color-gray", {
                   "--{{prefix}}info": "#FD8D00",
-                  "--{{prefix}}primary": "#91969E",
+                  "--{{prefix}}primary":
+                    "#91969E",
                 })
               }
-              defaultChecked={colorValue.value === "theme-color-gray"}
+              defaultChecked={
+                colorValue.value ===
+                "theme-color-gray"
+              }
             />
             <label
               className={` btn btn-border d-block bg-transparent`}
@@ -268,13 +340,24 @@ const ThemeScheme = memo((props) => {
                 height="26"
               >
                 {" "}
-                <circle cx="12" cy="12" r="10" fill="#91969E" />{" "}
-                <path d="M2,12 a1,1 1 1,0 20,0" fill="#FD8D00" />
+                <circle
+                  cx="12"
+                  cy="12"
+                  r="10"
+                  fill="#91969E"
+                />{" "}
+                <path
+                  d="M2,12 a1,1 1 1,0 20,0"
+                  fill="#FD8D00"
+                />
               </svg>
             </label>
           </div>
         </OverlayTrigger>
-        <OverlayTrigger placement="top" overlay={<Tooltip>Theme-3</Tooltip>}>
+        <OverlayTrigger
+          placement="top"
+          overlay={<Tooltip>Theme-3</Tooltip>}
+        >
           <div>
             <input
               type="radio"
@@ -285,10 +368,14 @@ const ThemeScheme = memo((props) => {
               onClick={() => {
                 colorChange("theme-color-red", {
                   "--{{prefix}}info": "#366AF0",
-                  "--{{prefix}}primary": "#DB5363",
+                  "--{{prefix}}primary":
+                    "#DB5363",
                 });
               }}
-              defaultChecked={colorValue.value === "theme-color-red"}
+              defaultChecked={
+                colorValue.value ===
+                "theme-color-red"
+              }
             />
             <label
               className={` btn btn-border d-block bg-transparent`}
@@ -305,13 +392,24 @@ const ThemeScheme = memo((props) => {
                 height="26"
               >
                 {" "}
-                <circle cx="12" cy="12" r="10" fill="#DB5363" />{" "}
-                <path d="M2,12 a1,1 1 1,0 20,0" fill="#366AF0" />
+                <circle
+                  cx="12"
+                  cy="12"
+                  r="10"
+                  fill="#DB5363"
+                />{" "}
+                <path
+                  d="M2,12 a1,1 1 1,0 20,0"
+                  fill="#366AF0"
+                />
               </svg>
             </label>
           </div>
         </OverlayTrigger>
-        <OverlayTrigger placement="top" overlay={<Tooltip>Theme-4</Tooltip>}>
+        <OverlayTrigger
+          placement="top"
+          overlay={<Tooltip>Theme-4</Tooltip>}
+        >
           <div>
             <input
               type="radio"
@@ -320,12 +418,19 @@ const ThemeScheme = memo((props) => {
               name="theme_color"
               id="theme-color-4"
               onClick={() => {
-                colorChange("theme-color-yellow", {
-                  "--{{prefix}}info": "#6410F1",
-                  "--{{prefix}}primary": "#EA6A12",
-                });
+                colorChange(
+                  "theme-color-yellow",
+                  {
+                    "--{{prefix}}info": "#6410F1",
+                    "--{{prefix}}primary":
+                      "#EA6A12",
+                  }
+                );
               }}
-              defaultChecked={colorValue.value === "theme-color-yellow"}
+              defaultChecked={
+                colorValue.value ===
+                "theme-color-yellow"
+              }
             />
             <label
               className={` btn btn-border d-block bg-transparent`}
@@ -342,13 +447,24 @@ const ThemeScheme = memo((props) => {
                 height="26"
               >
                 {" "}
-                <circle cx="12" cy="12" r="10" fill="#EA6A12" />{" "}
-                <path d="M2,12 a1,1 1 1,0 20,0" fill="#6410F1" />
+                <circle
+                  cx="12"
+                  cy="12"
+                  r="10"
+                  fill="#EA6A12"
+                />{" "}
+                <path
+                  d="M2,12 a1,1 1 1,0 20,0"
+                  fill="#6410F1"
+                />
               </svg>
             </label>
           </div>
         </OverlayTrigger>
-        <OverlayTrigger placement="top" overlay={<Tooltip>Theme-5</Tooltip>}>
+        <OverlayTrigger
+          placement="top"
+          overlay={<Tooltip>Theme-5</Tooltip>}
+        >
           <div>
             <input
               type="radio"
@@ -359,10 +475,14 @@ const ThemeScheme = memo((props) => {
               onClick={() => {
                 colorChange("theme-color-pink", {
                   "--{{prefix}}info": "#25C799",
-                  "--{{prefix}}primary": "#E586B3",
+                  "--{{prefix}}primary":
+                    "#E586B3",
                 });
               }}
-              defaultChecked={colorValue.value === "theme-color-pink"}
+              defaultChecked={
+                colorValue.value ===
+                "theme-color-pink"
+              }
             />
             <label
               className={`btn btn-border d-block bg-transparent`}
@@ -379,8 +499,16 @@ const ThemeScheme = memo((props) => {
                 height="26"
               >
                 {" "}
-                <circle cx="12" cy="12" r="10" fill="#E586B3" />{" "}
-                <path d="M2,12 a1,1 1 1,0 20,0" fill="#25C799" />
+                <circle
+                  cx="12"
+                  cy="12"
+                  r="10"
+                  fill="#E586B3"
+                />{" "}
+                <path
+                  d="M2,12 a1,1 1 1,0 20,0"
+                  fill="#25C799"
+                />
               </svg>
             </label>
           </div>
@@ -388,7 +516,9 @@ const ThemeScheme = memo((props) => {
       </div>
       <hr className="hr-horizontal" />
 
-      <h5 className="mt-4 mb-3">Scheme Direction</h5>
+      <h5 className="mt-4 mb-3">
+        Scheme Direction
+      </h5>
       <div className="d-grid gap-3 grid-cols-2 mb-4">
         <RadioBtn
           btnName="theme_scheme_direction"
@@ -397,7 +527,9 @@ const ThemeScheme = memo((props) => {
           className="text-center"
           labelclassName="p-0 mb-2"
           id="theme-scheme-direction-ltr"
-          defaultChecked={props.themeSchemeDirection}
+          defaultChecked={
+            props.themeSchemeDirection
+          }
           value="ltr"
         >
           <img
@@ -426,7 +558,9 @@ const ThemeScheme = memo((props) => {
           className="text-center"
           labelclassName="p-0 mb-2"
           id="theme-scheme-direction-rtl"
-          defaultChecked={props.themeSchemeDirection}
+          defaultChecked={
+            props.themeSchemeDirection
+          }
           value="rtl"
         >
           <img

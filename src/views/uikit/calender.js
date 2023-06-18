@@ -3,7 +3,7 @@ import React from 'react'
 import {Row, Col, Nav, Tab, Button } from 'react-bootstrap'
 import Card from '../../../src/components/Card'
 
-//flatpicker
+// flatpicker
 import Flatpickr from "react-flatpickr";
 import "flatpickr/dist/flatpickr.css";
 
