@@ -2,16 +2,16 @@ import React, { useEffect, Fragment } from "react";
 import { Row, Col, Dropdown, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
-//circular
+// circular
 import Circularprogressbar from "../../../components/circularprogressbar.js";
 // AOS
 import AOS from "aos";
 import "../../../../node_modules/aos/dist/aos";
 import "../../../../node_modules/aos/dist/aos.css";
-//apexcharts
+// apexcharts
 import Chart from "react-apexcharts";
 
-//swiper
+// swiper
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { Navigation } from "swiper";
 
@@ -19,16 +19,16 @@ import SwiperCore, { Navigation } from "swiper";
 import "swiper/swiper-bundle.min.css";
 // import 'swiper/components/navigation/navigation.scss';
 
-//progressbar
+// progressbar
 import Progress from "../../../components/progress.js";
-//img
+// img
 import shapes1 from "../../../assets/images/shapes/01.png";
 import shapes2 from "../../../assets/images/shapes/02.png";
 import shapes3 from "../../../assets/images/shapes/03.png";
 import shapes4 from "../../../assets/images/shapes/04.png";
 import shapes5 from "../../../assets/images/shapes/05.png";
 
-//Count-up
+// Count-up
 import CountUp from "react-countup";
 
 // Redux Selector / Action
@@ -79,7 +79,7 @@ const RtlSupport = () => {
       AOS.init({
         startEvent: "DOMContentLoaded",
         disable: function () {
-          var maxWidth = 996;
+          const maxWidth = 996;
           return window.innerWidth < maxWidth;
         },
         throttleDelay: 10,
@@ -133,7 +133,7 @@ const RtlSupport = () => {
             },
           },
           lines: {
-            show: false, //or just here to disable only x axis grids
+            show: false, // or just here to disable only x axis grids
           },
           categories: ["Jan", "Feb", "Mar", "Apr", "Jun", "Jul", "Aug"],
         },
@@ -170,7 +170,7 @@ const RtlSupport = () => {
       ],
     };
   
-    //chart2
+    // chart2
     const chart2 = {
       options: {
         colors: colors,

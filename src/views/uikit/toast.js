@@ -3,11 +3,11 @@ import {Button,  Nav,Toast, Tab} from 'react-bootstrap'
 import Card from '../../../src/components/Card'
 
 const Toasts =() =>{
-    //tab
+    // tab
     const [toggleState, setToggleState] = useState(true);
 
 
-    //toast
+    // toast
     const [showA, setShowA] = useState(true);
     const [showB, setShowB] = useState(true);
     const [showC, setShowC] = useState(true);

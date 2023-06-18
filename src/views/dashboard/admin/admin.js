@@ -22,10 +22,10 @@ const Admin = () => {
     const [show3, setShow3] = useState(false);
     const handleClose3 = () => setShow3(false);
 
-    let history = useNavigate()
+    const history = useNavigate()
 
 
-    //check
+    // check
     //     const [status , setStatus] =useState([{
     //         check: <input className="form-check-input" type="checkbox"/>,
     //     },
@@ -38,7 +38,7 @@ const Admin = () => {
 
     // ])
 
-    //permission
+    // permission
     const [permission, setPermission] = useState([{
         name: 'Role',
         status: false
@@ -95,7 +95,7 @@ const Admin = () => {
     // )
 
 
-    //role
+    // role
     const [role, setRole] = useState([
         {
             name: 'Admin',

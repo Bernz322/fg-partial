@@ -119,7 +119,7 @@ import error01 from '../../../assets/images/error/01.png'
 const Maintenance = () => {
     useEffect(
         () => {
-            //count down plugin js
+            // count down plugin js
             function getTimeRemaining(endtime) {
                 const total = Date.parse(endtime) - Date.parse(new Date());
                 const seconds = Math.floor((total / 1000) % 60);

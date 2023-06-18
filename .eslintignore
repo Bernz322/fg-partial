@@ -1,0 +1,14 @@
+node_modules/
+dist/
+coverage/
+.eslintrc.json
+src/__tests__
+postcss.config.js
+@types/*
+tailwind.config.js
+webpack.config.js
+jest.config.js
+.storybook/
+src/stories/
+public/**/*
+storybook-static/

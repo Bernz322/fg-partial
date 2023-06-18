@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 import React from "react";
 import { Row, Col, Table } from "react-bootstrap";
 import { Link } from "react-router-dom";
@@ -94,14 +95,19 @@ const TableData = () => {
           <Card>
             <Card.Header className="d-flex justify-content-between">
               <div className="header-title">
-                <h4 className="card-title">Bootstrap Datatables</h4>
+                <h4 className="card-title">
+                  Bootstrap Datatables
+                </h4>
               </div>
             </Card.Header>
             <Card.Body>
               <p>
-                Images in Bootstrap are made responsive with{" "}
-                <code>.img-fluid</code>. <code>max-width: 100%;</code> and{" "}
-                <code>height: auto;</code> are applied to the image so that it
+                Images in Bootstrap are made
+                responsive with{" "}
+                <code>.img-fluid</code>.{" "}
+                <code>max-width: 100%;</code> and{" "}
+                <code>height: auto;</code> are
+                applied to the image so that it
                 scales with the parent element.
               </p>
               <div className="table-responsive border-bottom my-3">
@@ -153,7 +159,8 @@ const TableData = () => {
                       role="status"
                       aria-live="polite"
                     >
-                      Showing 1 to 10 of 57 entries
+                      Showing 1 to 10 of 57
+                      entries
                     </div>
                   </Col>
                   <Col md="6">
