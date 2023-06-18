@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 // Selectors
 export const saveLocal = (state): String =>
   state.setting.saveLocal;
