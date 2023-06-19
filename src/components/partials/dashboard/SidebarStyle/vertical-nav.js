@@ -8,17 +8,29 @@ import {
   useLocation,
 } from "react-router-dom";
 import { Accordion } from "react-bootstrap";
-import { RiDashboardLine } from "react-icons/ri";
+import {
+  AiFillCloud,
+  AiFillCheckCircle,
+  AiOutlineCreditCard,
+  AiOutlineGoogle,
+} from "react-icons/ai";
 import {
   NavItem,
   NavItemCollapsable,
 } from "./nav-item";
+import {
+  mySNSUSidebarItems,
+  myUploadsSidebarItems,
+  myGSuiteSidebarItems,
+  enrollmentSidebarItems,
+} from "./constants";
 
 const VerticalNav = memo((props) => {
   const [activeMenu, setActiveMenu] =
     useState(false);
   const [active, setActive] = useState("");
   const location = useLocation();
+
   return (
     <Fragment>
       <Accordion
@@ -32,17 +44,56 @@ const VerticalNav = memo((props) => {
             tabIndex="-1"
           >
             <span className="default-icon">
-              Home
+              MY SNSU
             </span>
             <span className="mini-icon">-</span>
           </Link>
         </li>
 
+        <NavItemCollapsable
+          eventKey="sidebar-mysnsu"
+          location={location}
+          active={active}
+          setActive={setActive}
+          activeMenu={activeMenu}
+          setActiveMenu={setActiveMenu}
+          currentKey="mysnsu"
+          sidebarIcon={<AiFillCloud />}
+          title="My Enrollment"
+          navItemLists={mySNSUSidebarItems}
+        />
+
         <NavItem
           location={location}
-          pathname="/dashboard"
-          navName="Dashboard"
-          icon={<RiDashboardLine />}
+          pathname="/student/clearance"
+          navName="My Clearance"
+          icon={<AiFillCheckCircle />}
+        />
+
+        <NavItemCollapsable
+          eventKey="sidebar-myuploads"
+          location={location}
+          active={active}
+          setActive={setActive}
+          activeMenu={activeMenu}
+          setActiveMenu={setActiveMenu}
+          currentKey="myuploads"
+          sidebarIcon={<AiOutlineCreditCard />}
+          title="My Uploads"
+          navItemLists={myUploadsSidebarItems}
+        />
+
+        <NavItemCollapsable
+          eventKey="sidebar-mygsuite"
+          location={location}
+          active={active}
+          setActive={setActive}
+          activeMenu={activeMenu}
+          setActiveMenu={setActiveMenu}
+          currentKey="mygsuite"
+          sidebarIcon={<AiOutlineGoogle />}
+          title="My GSuite"
+          navItemLists={myGSuiteSidebarItems}
         />
 
         <li>
@@ -55,72 +106,23 @@ const VerticalNav = memo((props) => {
             tabIndex="-1"
           >
             <span className="default-icon">
-              Pages
+              REGIS
             </span>
             <span className="mini-icon">-</span>
           </Link>
         </li>
 
         <NavItemCollapsable
-          eventKey="sidebar-special"
+          eventKey="sidebar-enrollment"
           location={location}
           active={active}
           setActive={setActive}
           activeMenu={activeMenu}
           setActiveMenu={setActiveMenu}
-          currentKey="special"
-          sidebarIcon={<RiDashboardLine />}
-          title="Special Pages"
-          navItemLists={[
-            {
-              pathname:
-                "/dashboard/special-pages/billing",
-              icon: (
-                <i className="icon">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="10"
-                    viewBox="0 0 24 24"
-                    fill="currentColor"
-                  >
-                    <g>
-                      <circle
-                        cx="12"
-                        cy="12"
-                        r="8"
-                        fill="currentColor"
-                      ></circle>
-                    </g>
-                  </svg>
-                </i>
-              ),
-              title: "Billing",
-            },
-            {
-              pathname:
-                "/dashboard/special-pages/calender",
-              icon: (
-                <i className="icon">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="10"
-                    viewBox="0 0 24 24"
-                    fill="currentColor"
-                  >
-                    <g>
-                      <circle
-                        cx="12"
-                        cy="12"
-                        r="8"
-                        fill="currentColor"
-                      ></circle>
-                    </g>
-                  </svg>
-                </i>
-              ),
-              title: "Calender",
-            },
-          ]}
+          currentKey="enrollment"
+          sidebarIcon={<AiFillCloud />}
+          title="Enrollment"
+          navItemLists={enrollmentSidebarItems}
         />
       </Accordion>
     </Fragment>

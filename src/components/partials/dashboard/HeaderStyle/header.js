@@ -38,6 +38,8 @@ import { useSelector } from "react-redux";
 // Import selectors & action from setting store
 import * as SettingSelector from "../../../../store/setting/selectors";
 
+import ThemeToggler from "../../../../theme/ThemeToggler";
+
 const Header = memo((props) => {
   const navbarHide = useSelector(
     SettingSelector.navbar_show
@@ -144,6 +146,7 @@ const Header = memo((props) => {
               placeholder="Search..."
             />
           </div>
+          <ThemeToggler />
           <Navbar.Toggle aria-controls="navbarSupportedContent">
             <span className="navbar-toggler-icon">
               <span className="mt-2 navbar-toggler-bar bar1"></span>

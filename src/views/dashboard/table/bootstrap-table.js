@@ -1,5 +1,10 @@
 import React from "react";
-import { Row, Col, Image, Table } from "react-bootstrap";
+import {
+  Row,
+  Col,
+  Image,
+  Table,
+} from "react-bootstrap";
 import Card from "../../../components/Card";
 import { Link } from "react-router-dom";
 
@@ -22,12 +27,19 @@ const BootstrapTable = () => {
           <Card>
             <Card.Header className="d-flex justify-content-between">
               <div className="header-title">
-                <h4 className="card-title">Basic Table</h4>
+                <h4 className="card-title">
+                  Basic Table
+                </h4>
               </div>
             </Card.Header>
             <Card.Body className="p-0">
               <div className="table-responsive mt-4">
-                <Table striped id="basic-table" className=" mb-0" role="grid">
+                <Table
+                  striped
+                  id="basic-table"
+                  className=" mb-0"
+                  role="grid"
+                >
                   <thead>
                     <tr>
                       <th>Companies</th>
@@ -46,22 +58,33 @@ const BootstrapTable = () => {
                             src={shap1}
                             alt="profile"
                           />
-                          <h6>Soft UI XD Version</h6>
+                          <h6>
+                            Soft UI XD Version
+                          </h6>
                         </div>
                       </td>
                       <td>
                         <div className="iq-media-group iq-media-group-1">
-                          <Link to="#" className="iq-media-1">
+                          <Link
+                            to="#"
+                            className="iq-media-1"
+                          >
                             <div className="icon iq-icon-box-3 rounded-pill">
                               SP
                             </div>
                           </Link>
-                          <Link to="#" className="iq-media-1">
+                          <Link
+                            to="#"
+                            className="iq-media-1"
+                          >
                             <div className="icon iq-icon-box-3 rounded-pill">
                               PP
                             </div>
                           </Link>
-                          <Link to="#" className="iq-media-1">
+                          <Link
+                            to="#"
+                            className="iq-media-1"
+                          >
                             <div className="icon iq-icon-box-3 rounded-pill">
                               MM
                             </div>
@@ -70,7 +93,9 @@ const BootstrapTable = () => {
                       </td>
                       <td>$14000</td>
                       <td>
-                        <div className="text-info">Pending</div>
+                        <div className="text-info">
+                          Pending
+                        </div>
                       </td>
                       <td>
                         <div className="d-flex align-items-center mb-2">
@@ -83,7 +108,9 @@ const BootstrapTable = () => {
                           value={60}
                           minvalue={0}
                           maxvalue={100}
-                          style={{ height: "6px" }}
+                          style={{
+                            height: "6px",
+                          }}
                         />
                       </td>
                     </tr>
@@ -95,17 +122,25 @@ const BootstrapTable = () => {
                             src={shap2}
                             alt="profile"
                           />
-                          <h6>Add Progress Track</h6>
+                          <h6>
+                            Add Progress Track
+                          </h6>
                         </div>
                       </td>
                       <td>
                         <div className="iq-media-group iq-media-group-1">
-                          <Link to="#" className="iq-media-1">
+                          <Link
+                            to="#"
+                            className="iq-media-1"
+                          >
                             <div className="icon iq-icon-box-3 rounded-pill">
                               SP
                             </div>
                           </Link>
-                          <Link to="#" className="iq-media-1">
+                          <Link
+                            to="#"
+                            className="iq-media-1"
+                          >
                             <div className="icon iq-icon-box-3 rounded-pill">
                               PP
                             </div>
@@ -114,7 +149,9 @@ const BootstrapTable = () => {
                       </td>
                       <td>$3000</td>
                       <td>
-                        <div className="text-danger">Pending</div>
+                        <div className="text-danger">
+                          Pending
+                        </div>
                       </td>
                       <td>
                         <div className="d-flex align-items-center mb-2">
@@ -127,7 +164,9 @@ const BootstrapTable = () => {
                           value={10}
                           minvalue={0}
                           maxvalue={100}
-                          style={{ height: "6px" }}
+                          style={{
+                            height: "6px",
+                          }}
                         />
                       </td>
                     </tr>
@@ -139,17 +178,25 @@ const BootstrapTable = () => {
                             src={shap3}
                             alt="profile"
                           />
-                          <h6>Fix Platform Errors</h6>
+                          <h6>
+                            Fix Platform Errors
+                          </h6>
                         </div>
                       </td>
                       <td>
                         <div className="iq-media-group iq-media-group-1">
-                          <Link to="#" className="iq-media-1">
+                          <Link
+                            to="#"
+                            className="iq-media-1"
+                          >
                             <div className="icon iq-icon-box-3 rounded-pill">
                               SP
                             </div>
                           </Link>
-                          <Link to="#" className="iq-media-1">
+                          <Link
+                            to="#"
+                            className="iq-media-1"
+                          >
                             <div className="icon iq-icon-box-3 rounded-pill">
                               PP
                             </div>
@@ -158,7 +205,9 @@ const BootstrapTable = () => {
                       </td>
                       <td>Not set</td>
                       <td>
-                        <div className="text-success">Completed</div>
+                        <div className="text-success">
+                          Completed
+                        </div>
                       </td>
                       <td>
                         <div className="d-flex align-items-center mb-2">
@@ -171,7 +220,9 @@ const BootstrapTable = () => {
                           value={10}
                           minvalue={0}
                           maxvalue={100}
-                          style={{ height: "6px" }}
+                          style={{
+                            height: "6px",
+                          }}
                         />
                       </td>
                     </tr>
@@ -183,27 +234,41 @@ const BootstrapTable = () => {
                             src={shap4}
                             alt="profile"
                           />
-                          <h6>Launch Our Mobile App</h6>
+                          <h6>
+                            Launch Our Mobile App
+                          </h6>
                         </div>
                       </td>
                       <td>
                         <div className="iq-media-group iq-media-group-1">
-                          <Link to="#" className="iq-media-1">
+                          <Link
+                            to="#"
+                            className="iq-media-1"
+                          >
                             <div className="icon iq-icon-box-3 rounded-pill">
                               SP
                             </div>
                           </Link>
-                          <Link to="#" className="iq-media-1">
+                          <Link
+                            to="#"
+                            className="iq-media-1"
+                          >
                             <div className="icon iq-icon-box-3 rounded-pill">
                               PP
                             </div>
                           </Link>
-                          <Link to="#" className="iq-media-1">
+                          <Link
+                            to="#"
+                            className="iq-media-1"
+                          >
                             <div className="icon iq-icon-box-3 rounded-pill">
                               AP
                             </div>
                           </Link>
-                          <Link to="#" className="iq-media-1">
+                          <Link
+                            to="#"
+                            className="iq-media-1"
+                          >
                             <div className="icon iq-icon-box-3 rounded-pill">
                               DP
                             </div>
@@ -212,7 +277,9 @@ const BootstrapTable = () => {
                       </td>
                       <td>$20500</td>
                       <td>
-                        <div className="text-success">Completed</div>
+                        <div className="text-success">
+                          Completed
+                        </div>
                       </td>
                       <td>
                         <div className="d-flex align-items-center mb-2">
@@ -225,7 +292,9 @@ const BootstrapTable = () => {
                           value={100}
                           minvalue={0}
                           maxvalue={100}
-                          style={{ height: "6px" }}
+                          style={{
+                            height: "6px",
+                          }}
                         />
                       </td>
                     </tr>
@@ -237,12 +306,18 @@ const BootstrapTable = () => {
                             src={shap5}
                             alt="profile"
                           />
-                          <h6>Add the New Pricing Page</h6>
+                          <h6>
+                            Add the New Pricing
+                            Page
+                          </h6>
                         </div>
                       </td>
                       <td>
                         <div className="iq-media-group iq-media-group-1">
-                          <Link to="#" className="iq-media-1">
+                          <Link
+                            to="#"
+                            className="iq-media-1"
+                          >
                             <div className="icon iq-icon-box-3 rounded-pill">
                               SP
                             </div>
@@ -251,7 +326,9 @@ const BootstrapTable = () => {
                       </td>
                       <td>$500</td>
                       <td>
-                        <div className="text-primary">On Schedule</div>
+                        <div className="text-primary">
+                          On Schedule
+                        </div>
                       </td>
                       <td>
                         <div className="d-flex align-items-center mb-2">
@@ -264,7 +341,9 @@ const BootstrapTable = () => {
                           value={25}
                           minvalue={0}
                           maxvalue={100}
-                          style={{ height: "6px" }}
+                          style={{
+                            height: "6px",
+                          }}
                         />
                       </td>
                     </tr>
@@ -276,17 +355,26 @@ const BootstrapTable = () => {
                             src={shap6}
                             alt="profile"
                           />
-                          <h6>Redesign New Online Shop</h6>
+                          <h6>
+                            Redesign New Online
+                            Shop
+                          </h6>
                         </div>
                       </td>
                       <td>
                         <div className="iq-media-group iq-media-group-1">
-                          <Link to="#" className="iq-media-1">
+                          <Link
+                            to="#"
+                            className="iq-media-1"
+                          >
                             <div className="icon iq-icon-box-3 rounded-pill">
                               SP
                             </div>
                           </Link>
-                          <Link to="#" className="iq-media-1">
+                          <Link
+                            to="#"
+                            className="iq-media-1"
+                          >
                             <div className="icon iq-icon-box-3 rounded-pill">
                               PP
                             </div>
@@ -295,7 +383,9 @@ const BootstrapTable = () => {
                       </td>
                       <td>$2000</td>
                       <td>
-                        <div className="text-warning">Completed</div>
+                        <div className="text-warning">
+                          Completed
+                        </div>
                       </td>
                       <td>
                         <div className="d-flex align-items-center mb-2">
@@ -308,7 +398,9 @@ const BootstrapTable = () => {
                           value={40}
                           minvalue={0}
                           maxvalue={100}
-                          style={{ height: "6px" }}
+                          style={{
+                            height: "6px",
+                          }}
                         />
                       </td>
                     </tr>

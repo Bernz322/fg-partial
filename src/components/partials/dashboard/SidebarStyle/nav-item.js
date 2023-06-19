@@ -139,6 +139,7 @@ export const NavItemCollapsable = ({
       <Accordion.Collapse eventKey={eventKey}>
         <ul className="sub-nav">
           {navItemLists.map((item, idx) => {
+            console.log(navItemLists);
             return (
               <li
                 className="nav-item"
@@ -152,6 +153,7 @@ export const NavItemCollapsable = ({
                       : ""
                   } nav-link`}
                   to={item.pathname}
+                  target={item?.target}
                 >
                   {item.icon}
                   <span className="item-name">
