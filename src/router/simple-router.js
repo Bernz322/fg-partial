@@ -1,7 +1,7 @@
 import React from "react";
 
 // Auth pages
-import SignIn from "../views/dashboard/auth/sign-in";
+import SignIn from "../views/auth/sign-in";
 // Error pages
 import Error404 from "../views/dashboard/errors/error404";
 import Error500 from "../views/dashboard/errors/error500";
@@ -9,7 +9,7 @@ import Maintenance from "../views/dashboard/errors/maintenance";
 
 export const SimpleRouter = [
   {
-    path: "auth/sign-in",
+    path: "login",
     element: <SignIn />,
   },
   {
