@@ -31,7 +31,7 @@ export const DefaultRouter = [
     element: <DashboardLayout />,
     children: [
       {
-        path: "dashboard",
+        path: "student",
         element: <Index />,
       },
       {
