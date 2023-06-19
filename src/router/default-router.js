@@ -18,9 +18,6 @@ import BootstrapTable from "../views/dashboard/table/bootstrap-table";
 import TableData from "../views/dashboard/table/table-data";
 // map
 import Google from "../views/dashboard/maps/google";
-import Billing from "../views/dashboard/special-pages/billing";
-import Kanban from "../views/dashboard/special-pages/kanban";
-import Pricing from "../views/dashboard/special-pages/pricing";
 import Timeline from "../views/dashboard/special-pages/timeline";
 import Calender from "../views/dashboard/special-pages/calender";
 import RtlSupport from "../views/dashboard/special-pages/RtlSupport";
@@ -38,20 +35,8 @@ export const DefaultRouter = [
         element: <Index />,
       },
       {
-        path: "dashboard/special-pages/billing",
-        element: <Billing />,
-      },
-      {
         path: "dashboard/special-pages/calender",
         element: <Calender />,
-      },
-      {
-        path: "dashboard/special-pages/kanban",
-        element: <Kanban />,
-      },
-      {
-        path: "dashboard/special-pages/pricing",
-        element: <Pricing />,
       },
       {
         path: "dashboard/special-pages/timeline",

@@ -1,3 +1,6 @@
+/**
+ * Route '/' - This is the main route of the application.
+ */
 import React, { useState, Fragment } from "react";
 import {
   Button,

@@ -18,6 +18,7 @@ import { store } from "./store";
 import Index from "./views/index";
 import { SimpleRouter } from "./router/simple-router";
 import { DefaultRouter } from "./router/default-router";
+import ThemeProvider from "./theme/ThemeProvider";
 
 /**
  * Create entire app router.
@@ -39,14 +40,16 @@ ReactDOM.createRoot(
   document.getElementById("root")
 ).render(
   <Provider store={store}>
-    <Suspense
-      fallback={<div>Loading.........</div>}
-    >
-      <App>
-        <RouterProvider
-          router={router}
-        ></RouterProvider>
-      </App>
-    </Suspense>
+    <ThemeProvider>
+      <Suspense
+        fallback={<div>Loading.........</div>}
+      >
+        <App>
+          <RouterProvider
+            router={router}
+          ></RouterProvider>
+        </App>
+      </Suspense>
+    </ThemeProvider>
   </Provider>
 );
